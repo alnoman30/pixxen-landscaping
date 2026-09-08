@@ -1983,62 +1983,54 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Landscaping image reveal animate
-document.addEventListener("DOMContentLoaded", () => {
-  if (typeof gsap === "undefined") {
-    console.warn("GSAP not found. Include the GSAP script before this file.");
-    return;
-  }
-  if (typeof ScrollTrigger === "undefined") {
-    console.warn("ScrollTrigger not found. Include the ScrollTrigger plugin.");
-    return;
-  }
+gsap.registerPlugin(ScrollTrigger);
 
-  gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll(".landscaping-image-reveal").forEach((wrapper) => {
+  const image = wrapper.querySelector("img");
 
-  const images = document.querySelectorAll(".landscaping-image-reveal");
+  if (!image) return;
 
-  images.forEach((img) => {
-    const container = img.parentElement;
-    container.style.position = "relative";
-    // container already has overflow-hidden via Tailwind, keep it that way
-
-    // Initial state: invisible and slightly lower, ready to fade + rise
-    gsap.set(img, {
-      opacity: 0,
-      y: 60,
-      transformOrigin: "center center",
-    });
-
-    // 1. Reveal — smooth fade + gentle rise, plays once when scrolled into view
-    gsap.to(img, {
-      opacity: 1,
-      y: 0,
-      duration: 1.4,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: container,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    // 2. Subtle parallax drift while scrolling past, scrubbed smoothly
-    gsap.fromTo(
-      img,
-      { yPercent: -6 },
-      {
-        yPercent: 6,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
-      }
-    );
+  // Initial state
+  gsap.set(image, {
+    opacity: 0,
+    scale: 1.15,
+    yPercent: 0,
   });
+
+  // 1. Smooth reveal — happens ONLY ONCE
+  gsap.to(image, {
+    opacity: 1,
+    scale: 1,
+    duration: 1.4,
+    ease: "power3.out",
+
+    scrollTrigger: {
+      trigger: wrapper,
+      start: "top 85%",
+      once: true,
+    },
+  });
+
+  // 2. Parallax — works continuously while scrolling
+  gsap.fromTo(
+    image,
+    {
+      yPercent: -12,
+    },
+    {
+      yPercent: 12,
+      ease: "none",
+
+      scrollTrigger: {
+        trigger: wrapper,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    }
+  );
 });
+
 // Landscaping CTA button animation
 document.addEventListener('DOMContentLoaded', () => {
     const MAGNETIC_MAX_DISTANCE = 12; // px -- movement can never exceed this, however far the mouse goes
