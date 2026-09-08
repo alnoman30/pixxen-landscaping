@@ -1632,6 +1632,7 @@ if (allIndustriesGrid) {
 
 // Pixxen Landscaping js start 
 
+// Landscapping Banner animation
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
     console.warn("GSAP or ScrollTrigger is not loaded.");
@@ -1875,7 +1876,169 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Landscapping Service panel animation
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof gsap === "undefined") {
+    console.warn("GSAP not found. Include the GSAP script before this file.");
+    return;
+  }
 
+  // Tweak these to taste
+  const WASH_COLOR = "#62946B";
+  const TITLE_HOVER_COLOR = "#FFFFFF";
+  const PARAGRAPH_HOVER_COLOR = "#FFFFFF";
+  const BADGE_HOVER_BG = "#A6D96A";
+  const BORDER_HOVER_COLOR = "#FFFFFF";
+  const BORDER_DEFAULT_COLOR = "#304D36";
+
+  const rows = document.querySelectorAll(".landscaping-item-row");
+
+  rows.forEach((row) => {
+    row.style.position = "relative";
+    row.style.overflow = "hidden";
+
+    // Circular wash panel, centered on cursor entry point
+    const bg = document.createElement("div");
+    bg.className = "landscaping-item-bg";
+    Object.assign(bg.style, {
+      position: "absolute",
+      top: "0",
+      left: "0",
+      width: "0px",
+      height: "0px",
+      background: WASH_COLOR,
+      borderRadius: "50%",
+      transform: "translate(-50%, -50%) scale(0)",
+      zIndex: "0",
+      pointerEvents: "none",
+    });
+    row.prepend(bg);
+
+    // Keep row content above the wash panel
+    Array.from(row.children).forEach((child) => {
+      if (child !== bg) {
+        child.style.position = "relative";
+        child.style.zIndex = "1";
+      }
+    });
+
+    const badge = row.querySelector("span"); // the 01/02/03 pill
+    const title = row.querySelector("h3");
+    // Description text — grabs the last <p> in the row so it works even
+    // if the badge's number <p> comes first. Add class="landscaping-item-desc"
+    // to your description <p> for a more explicit, future-proof match.
+    const descByClass = row.querySelector(".landscaping-item-desc");
+    const allParagraphs = row.querySelectorAll("p");
+    const paragraph = descByClass || allParagraphs[allParagraphs.length - 1];
+    const originalBadgeBg = badge ? getComputedStyle(badge).backgroundColor : null;
+
+    if (title) title.style.transition = "none";
+    if (paragraph) paragraph.style.transition = "none";
+    if (badge) badge.style.transition = "none";
+    row.style.transition = "none";
+
+    const setWashOrigin = (e) => {
+      const rect = row.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      // Diameter large enough to cover the row from any corner
+      const diameter = Math.hypot(rect.width, rect.height) * 2.2;
+
+      gsap.set(bg, { left: x, top: y, width: diameter, height: diameter });
+    };
+
+    const animTargets = [bg, title, paragraph, badge, row].filter(Boolean);
+
+    row.addEventListener("mouseenter", (e) => {
+      gsap.killTweensOf(animTargets); // cancel any in-flight tweens first
+      setWashOrigin(e);
+      gsap.to(bg, { scale: 1, duration: 0.6, ease: "power2.out" });
+      if (title) gsap.to(title, { color: TITLE_HOVER_COLOR, duration: 0.3 });
+      if (paragraph)
+        gsap.to(paragraph, { color: PARAGRAPH_HOVER_COLOR, duration: 0.3 });
+      if (badge)
+        gsap.to(badge, { backgroundColor: BADGE_HOVER_BG, duration: 0.3 });
+      gsap.to(row, {
+        borderTopColor: BORDER_HOVER_COLOR,
+        borderBottomColor: BORDER_HOVER_COLOR,
+        duration: 0.3,
+      });
+    });
+
+    row.addEventListener("mouseleave", () => {
+      gsap.killTweensOf(animTargets); // cancel any in-flight tweens first
+      gsap.to(bg, { scale: 0, duration: 0.5, ease: "power2.out" });
+      if (title) gsap.to(title, { color: "#0B2518", duration: 0.3 });
+      if (paragraph)
+        gsap.to(paragraph, { color: "#304D36", duration: 0.3 });
+      if (badge)
+        gsap.to(badge, { backgroundColor: originalBadgeBg, duration: 0.3 });
+      gsap.to(row, {
+        borderTopColor: BORDER_DEFAULT_COLOR,
+        borderBottomColor: BORDER_DEFAULT_COLOR,
+        duration: 0.3,
+      });
+    });
+  });
+});
+
+// Landscaping image reveal animate
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof gsap === "undefined") {
+    console.warn("GSAP not found. Include the GSAP script before this file.");
+    return;
+  }
+  if (typeof ScrollTrigger === "undefined") {
+    console.warn("ScrollTrigger not found. Include the ScrollTrigger plugin.");
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const images = document.querySelectorAll(".landscaping-image-reveal");
+
+  images.forEach((img) => {
+    const container = img.parentElement;
+    container.style.position = "relative";
+    // container already has overflow-hidden via Tailwind, keep it that way
+
+    // Initial state: invisible and slightly lower, ready to fade + rise
+    gsap.set(img, {
+      opacity: 0,
+      y: 60,
+      transformOrigin: "center center",
+    });
+
+    // 1. Reveal — smooth fade + gentle rise, plays once when scrolled into view
+    gsap.to(img, {
+      opacity: 1,
+      y: 0,
+      duration: 1.4,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: container,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    // 2. Subtle parallax drift while scrolling past, scrubbed smoothly
+    gsap.fromTo(
+      img,
+      { yPercent: -6 },
+      {
+        yPercent: 6,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      }
+    );
+  });
+});
 // Landscaping CTA button animation
 document.addEventListener('DOMContentLoaded', () => {
     const MAGNETIC_MAX_DISTANCE = 12; // px -- movement can never exceed this, however far the mouse goes

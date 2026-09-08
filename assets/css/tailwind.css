@@ -868,3 +868,42 @@ html.lenis body {
 }
 
 /* Insurance stats metrics counter */
+
+.landscaping-heading-shape::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: 46px;
+  height: 46px;
+  background-image: url('../images/landscaping-heading-badge.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .landscaping-heading-shape::after {
+    top: -35px;
+    left: -25px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landscaping-heading-shape::after {
+    top: -40px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .landscaping-heading-shape::after {
+    top: -80px;
+    left: -55px;
+    width: 140px;
+    height: 140px;
+  }
+}
