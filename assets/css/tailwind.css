@@ -839,7 +839,9 @@ html.lenis body {
 
 /* ---- shared wipe mechanics (color values come from modifier classes below) ---- */
 .landscaping-btn-text-wipe,
-.landscaping-btn-text-wipe-outline {
+.landscaping-btn-text-wipe-outline,
+.landscaping-btn-text-wipe-dark,
+.landscaping-btn-text-wipe-outline2 {
   background-size: 200% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
@@ -850,22 +852,36 @@ html.lenis body {
   font-weight: 700;
 }
 
-/* Primary button text gradient (dark -> white/light) */
+/* Primary button text gradient (light -> dark) */
 .landscaping-btn-cta .landscaping-btn-text-wipe {
   background-image: linear-gradient(to right, #DFF2C8 50%, #0B2518 50%);
 }
 
-/* Secondary/Outline button text gradient (adjusted for outline button style) */
+/* Secondary/Outline button text gradient */
 .landscaping-btn-cta-outline .landscaping-btn-text-wipe-outline {
   background-image: linear-gradient(to right, #DFF2C8 50%, #A6D96A 50%);
+}
+
+/* Dark button text gradient */
+.landscaping-btn-cta-dark .landscaping-btn-text-wipe-dark {
+  background-image: linear-gradient(to right, #0B2518 50%, #A6D96A 50%);
+}
+
+/* Outline 2 button text gradient */
+.landscaping-btn-cta-outline2 .landscaping-btn-text-wipe-outline2 {
+  background-image: linear-gradient(to right, #DFF2C8 50%, #0B2518 50%);
 }
 
 /* Hover effects */
 .landscaping-btn-cta:hover .landscaping-btn-text-wipe,
 .landscaping-btn-cta-outline:hover .landscaping-btn-text-wipe-outline,
+.landscaping-btn-cta-dark:hover .landscaping-btn-text-wipe-dark,
+.landscaping-btn-cta-outline2:hover .landscaping-btn-text-wipe-outline2,
 .banner-btn-outline:hover .landscaping-btn-text-wipe {
   background-position: 0% 0;
 }
+
+
 
 /* Insurance stats metrics counter */
 
@@ -907,3 +923,4 @@ html.lenis body {
     height: 140px;
   }
 }
+
