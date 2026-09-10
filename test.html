@@ -1,484 +1,171 @@
-<div class="w-full pb-6 lg:pb-0">
-  <div class="w-full flex flex-col">
-    <!-- Desktop & Unified Grid View -->
-    <div class="hidden md:grid grid-cols-4 gap-x-1 items-stretch">
-      <!-- Row 1: Headers -->
-      <div
-        class="bg-[#304D36] rounded-3xl md:rounded-[20px] lg:rounded-3xl px-3.5 py-4 md:px-4 md:py-4.5 lg:p-6 flex items-center"
-      >
-        <span
-          class="barlow text-white font-black text-base lg:text-[22px] xl:text-2xl uppercase"
-        >
-          Feature
-        </span>
-      </div>
-      <div
-        class="bg-[#A6D96A] rounded-t-3xl md:rounded-t-[20px] lg:rounded-t-3xl px-3.5 py-4 md:px-4 md:py-4.5 lg:p-6 flex items-center gap-2 justify-between"
-      >
-        <div class="flex items-center gap-2">
-          <img
-            src="assets/images/landscaping-platform-pixxen.svg"
-            alt="Pixxen"
-            class="w-5 md:w-6.5 lg:w-8 shrink-0"
-          />
-          <span
-            class="barlow text-[#0B2518] font-black text-base lg:text-[22px] xl:text-2xl uppercase"
-          >
-            Pixxen
-          </span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscaping Reviews</title>
+    <!-- 1. Include Swiper CSS in the head -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Include your Tailwind / custom styling here -->
+</head>
+<body>
+
+<!-- Section Wrapper -->
+<section id="landscaping-reviews-section" class="bg-[#304D36] py-12 md:py-16 lg:py-20 xl:py-32 overflow-hidden">
+    <div class="container mx-auto px-4">
+        <!-- Section Heading -->
+        <div class="text-center max-w-248.25 mx-auto mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+            <h2 class="barlow text-white text-2xl md:text-[36px] lg:text-[40px] xl:text-[56px] font-black leading-[100%] uppercase mb-3 md:mb-3.5 lg:mb-4 xl:mb-8">
+                Reviews from landscapers we've built sites for
+            </h2>
+            <p class="barlow-semi-condensed text-white text-xs md:text-sm lg:text-base xl:text-lg font-medium leading-[150%]">
+                Placeholder quotes — to be replaced with real client testimonials before launch.
+            </p>
         </div>
-        <span
-          class="barlow text-[#0B2518] font-black text-base lg:text-[22px] xl:text-2xl uppercase"
-        >
-          $999
-        </span>
-      </div>
-      <div
-        class="bg-[#304D36] rounded-3xl md:rounded-[20px] lg:rounded-3xl px-3.5 py-4 md:px-4 md:py-4.5 lg:p-6 flex items-center"
-      >
-        <span
-          class="barlow text-white font-black text-base lg:text-[22px] xl:text-2xl uppercase"
-        >
-          Angi / Houzz
-        </span>
-      </div>
-      <div
-        class="bg-[#304D36] rounded-3xl md:rounded-[20px] lg:rounded-3xl px-3.5 py-4 md:px-4 md:py-4.5 lg:p-6 flex items-center"
-      >
-        <span
-          class="barlow text-white font-black text-base lg:text-[22px] xl:text-2xl uppercase"
-        >
-          Full-service agency
-        </span>
-      </div>
-
-      <!-- Row 2: Total first-year cost -->
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Total first-year cost
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-x-4 border-x-[#A6D96A] border-[#304D36] cossette-texte text-[#A6D96A] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        $999 one-time
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        20% platform commission
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        $8K-18K + retainer
-      </div>
-
-      <!-- Row 3: Brand ownership -->
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Brand ownership
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-x-4 border-x-[#A6D96A] border-[#304D36] cossette-texte text-[#A6D96A] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Yours alone
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Platform's
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Yours
-      </div>
-
-      <!-- Row 4: Recurring relationships -->
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Recurring relationships
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-x-4 border-x-[#A6D96A] border-[#304D36] cossette-texte text-[#A6D96A] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Yours
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Through platform
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Direct
-      </div>
-
-      <!-- Row 5: Pricing control -->
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Pricing control
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-x-4 border-x-[#A6D96A] border-[#304D36] cossette-texte text-[#A6D96A] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Real keyword research
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Platform-controlled
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Yours
-      </div>
-
-      <!-- Row 6: Ownership -->
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Ownership
-      </div>
-      <div
-        class="p-3.5 lg:p-6 rounded-b-3xl border-b-4 border-x-4 border-[#A6D96A] cossette-texte text-[#A6D96A] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        You own everything
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Listings only
-      </div>
-      <div
-        class="p-3.5 lg:p-6 border-b border-[#304D36] cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] h-full flex items-center"
-      >
-        Often agency-locked
-      </div>
     </div>
 
-    <!-- Mobile View -->
-    <div class="flex md:hidden flex-col gap-4">
-      <!-- Feature Card 1: Total first-year cost -->
-      <div class="flex flex-col bg-transparent">
-        <div
-          class="bg-[#304D36] rounded-3xl md:rounded-[20px] lg:rounded-3xl px-3.5 py-4 md:px-4 md:py-4.5 lg:p-6 flex items-center"
-        >
-          <span
-            class="barlow text-white font-black text-base lg:text-[22px] xl:text-2xl uppercase"
-          >
-            Total first-year cost
-          </span>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <img
-              src="assets/images/landscaping-platform-pixxen-green.svg"
-              alt="Pixxen"
-              class="w-5 md:w-6.5 lg:w-8 shrink-0"
-            />
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Pixxen $999</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            $999 one-time
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Rover / Wag listing</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            20% platform commission
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Full-service agency</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            $8K-18K + retainer
-          </div>
-        </div>
-      </div>
+    <!-- Swiper Container -->
+    <div class="swiper landscaping-swiper">
+        <div class="swiper-wrapper">
+            
+            <!-- Slide 1 -->
+            <div class="swiper-slide h-auto">
+                <div class="landscaping-card bg-[#A6D96A] p-4 md:p-6 xl:p-8 rounded-3xl md:rounded-4xl lg:rounded-[40px] xl:rounded-[48px] flex flex-col h-full justify-between">
+                    <div class="flex gap-0.5 mb-3 md:mb-4 xl:mb-8">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                    </div>
+                    <p class="cosette-texte text-xs md:text-lg lg:text-xl xl:text-2xl text-[#18392B] font-light leading-[150%]">
+                        "As a maintenance-focused landscaper, recurring contracts are everything. Pixxen surfaced our tier pricing properly, added a seasonal banner that activated in spring, and within eight months our active contracts grew from 47 to 184. Annual contract value grew $1.2M."
+                    </p>
+                    <div class="flex justify-between items-center mt-auto pt-8">
+                        <div class="flex flex-col gap-1">
+                            <span class="barlow text-[#0B2518] font-black text-base lg:text-[22px] xl:text-2xl leading-[130%] uppercase">Jamie Greenline</span>
+                            <p class="cosette-texte text-[#18392B] text-xs md:text-sm lg:text-base xl:text-lg font-normal leading-[150%]">Founder, Greenline Grounds (Austin)</p>
+                        </div>
+                        <img src="assets/images/landscaping-client-01.png" alt="Jamie Greenline" class="w-12 h-12 sm:w-[52px] sm:h-[52px] md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full object-contain">
+                    </div>
+                </div>
+            </div>
 
-      <!-- Feature Card 2: Brand ownership -->
-      <div class="flex flex-col bg-transparent">
-        <div
-          class="bg-[#304D36] rounded-3xl md:rounded-[20px] lg:rounded-3xl px-3.5 py-4 md:px-4 md:py-4.5 lg:p-6"
-        >
-          <span
-            class="barlow text-white font-black text-base lg:text-[22px] xl:text-2xl uppercase"
-          >
-            Brand ownership
-          </span>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <img
-              src="assets/images/landscaping-platform-pixxen-green.svg"
-              alt="Pixxen"
-              class="w-5 md:w-6.5 lg:w-8 shrink-0"
-            />
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Pixxen $999</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Yours
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Rover / Wag listing</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Platform's
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Full-service agency</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Yours
-          </div>
-        </div>
-      </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide h-auto">
+                <div class="landscaping-card bg-[#A6D96A] p-4 md:p-6 xl:p-8 rounded-3xl md:rounded-4xl lg:rounded-[40px] xl:rounded-[48px] flex flex-col h-full justify-between">
+                    <div class="flex gap-0.5 mb-3 md:mb-4 xl:mb-8">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                    </div>
+                    <p class="cosette-texte text-xs md:text-lg lg:text-xl xl:text-2xl text-[#18392B] font-light leading-[150%]">
+                        "As a maintenance-focused landscaper, recurring contracts are everything. Pixxen surfaced our tier pricing properly, added a seasonal banner that activated in spring, and within eight months our active contracts grew from 47 to 184. Annual contract value grew $1.2M."
+                    </p>
+                    <div class="flex justify-between items-center mt-auto pt-8">
+                        <div class="flex flex-col gap-1">
+                            <span class="barlow text-[#0B2518] font-black text-base lg:text-[22px] xl:text-2xl leading-[130%] uppercase">Jamie Greenline</span>
+                            <p class="cosette-texte text-[#18392B] text-xs md:text-sm lg:text-base xl:text-lg font-normal leading-[150%]">Founder, Greenline Grounds (Austin)</p>
+                        </div>
+                        <img src="assets/images/landscaping-client-01.png" alt="Jamie Greenline" class="w-12 h-12 sm:w-[52px] sm:h-[52px] md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full object-contain">
+                    </div>
+                </div>
+            </div>
 
-      <!-- Feature Card 3: Recurring relationships -->
-      <div class="flex flex-col bg-transparent">
-        <div
-          class="bg-[#304D36] rounded-3xl md:rounded-[20px] lg:rounded-3xl px-3.5 py-4 md:px-4 md:py-4.5 lg:p-6"
-        >
-          <span
-            class="barlow text-white font-black text-base lg:text-[22px] xl:text-2xl uppercase"
-          >
-            Recurring relationships
-          </span>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <img
-              src="assets/images/landscaping-platform-pixxen-green.svg"
-              alt="Pixxen"
-              class="w-5 md:w-6.5 lg:w-8 shrink-0"
-            />
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Pixxen $999</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Direct with customer
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Rover / Wag listing</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Through platform
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Full-service agency</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Direct
-          </div>
-        </div>
-      </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide h-auto">
+                <div class="landscaping-card bg-[#A6D96A] p-4 md:p-6 xl:p-8 rounded-3xl md:rounded-4xl lg:rounded-[40px] xl:rounded-[48px] flex flex-col h-full justify-between">
+                    <div class="flex gap-0.5 mb-3 md:mb-4 xl:mb-8">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                    </div>
+                    <p class="cosette-texte text-xs md:text-lg lg:text-xl xl:text-2xl text-[#18392B] font-light leading-[150%]">
+                        "As a maintenance-focused landscaper, recurring contracts are everything. Pixxen surfaced our tier pricing properly, added a seasonal banner that activated in spring, and within eight months our active contracts grew from 47 to 184. Annual contract value grew $1.2M."
+                    </p>
+                    <div class="flex justify-between items-center mt-auto pt-8">
+                        <div class="flex flex-col gap-1">
+                            <span class="barlow text-[#0B2518] font-black text-base lg:text-[22px] xl:text-2xl leading-[130%] uppercase">Jamie Greenline</span>
+                            <p class="cosette-texte text-[#18392B] text-xs md:text-sm lg:text-base xl:text-lg font-normal leading-[150%]">Founder, Greenline Grounds (Austin)</p>
+                        </div>
+                        <img src="assets/images/landscaping-client-01.png" alt="Jamie Greenline" class="w-12 h-12 sm:w-[52px] sm:h-[52px] md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full object-contain">
+                    </div>
+                </div>
+            </div>
 
-      <!-- Feature Card 4: Pricing control -->
-      <div class="flex flex-col bg-transparent">
-        <div
-          class="bg-[#304D36] rounded-3xl md:rounded-[20px] lg:rounded-3xl px-3.5 py-4 md:px-4 md:py-4.5 lg:p-6"
-        >
-          <span
-            class="barlow text-white font-black text-base lg:text-[22px] xl:text-2xl uppercase"
-          >
-            Pricing control
-          </span>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <img
-              src="assets/images/landscaping-platform-pixxen-green.svg"
-              alt="Pixxen"
-              class="w-5 md:w-6.5 lg:w-8 shrink-0"
-            />
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Pixxen $999</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Yours
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Rover / Wag listing</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Platform-controlled
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Full-service agency</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Yours
-          </div>
-        </div>
-      </div>
+            <!-- Slide 4 -->
+            <div class="swiper-slide h-auto">
+                <div class="landscaping-card bg-[#A6D96A] p-4 md:p-6 xl:p-8 rounded-3xl md:rounded-4xl lg:rounded-[40px] xl:rounded-[48px] flex flex-col h-full justify-between">
+                    <div class="flex gap-0.5 mb-3 md:mb-4 xl:mb-8">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                         <img src="assets/images/landscaping-star.svg" alt="icon" class="w-5.5 md:w-7 xl:w-8 h-auto object-contain shrink-0">
+                    </div>
+                    <p class="cosette-texte text-xs md:text-lg lg:text-xl xl:text-2xl text-[#18392B] font-light leading-[150%]">
+                        "As a maintenance-focused landscaper, recurring contracts are everything. Pixxen surfaced our tier pricing properly, added a seasonal banner that activated in spring, and within eight months our active contracts grew from 47 to 184. Annual contract value grew $1.2M."
+                    </p>
+                    <div class="flex justify-between items-center mt-auto pt-8">
+                        <div class="flex flex-col gap-1">
+                            <span class="barlow text-[#0B2518] font-black text-base lg:text-[22px] xl:text-2xl leading-[130%] uppercase">Jamie Greenline</span>
+                            <p class="cosette-texte text-[#18392B] text-xs md:text-sm lg:text-base xl:text-lg font-normal leading-[150%]">Founder, Greenline Grounds (Austin)</p>
+                        </div>
+                        <img src="assets/images/landscaping-client-01.png" alt="Jamie Greenline" class="w-12 h-12 sm:w-[52px] sm:h-[52px] md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full object-contain">
+                    </div>
+                </div>
+            </div>
 
-      <!-- Feature Card 5: Ownership -->
-      <div class="flex flex-col bg-transparent">
-        <div
-          class="bg-[#304D36] rounded-3xl md:rounded-[20px] lg:rounded-3xl px-3.5 py-4 md:px-4 md:py-4.5 lg:p-6"
-        >
-          <span
-            class="barlow text-white font-black text-base lg:text-[22px] xl:text-2xl uppercase"
-          >
-            Ownership
-          </span>
         </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <img
-              src="assets/images/landscaping-platform-pixxen-green.svg"
-              alt="Pixxen"
-              class="w-5 md:w-6.5 lg:w-8 shrink-0"
-            />
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Pixxen $999</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            You own everything
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Rover / Wag listing</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Listings only
-          </div>
-        </div>
-        <div
-          class="grid grid-cols-2 p-3 border-b border-[#304D36] items-center gap-2"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%]"
-              >Full-service agency</span
-            >
-          </div>
-          <div
-            class="cossette-texte text-[#FAFAF7] text-xs md:text-sm lg:text-base xl:text-lg font-bold leading-[150%] text-right"
-          >
-            Often agency-locked
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
+</section>
+
+<style>
+    /* Styling for Swiper slides (Inactive state) */
+    .landscaping-swiper .swiper-slide {
+        opacity: 0.35;
+        transform: scale(0.90);
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    /* Active State (Centers two main cards) */
+    .landscaping-swiper .swiper-slide-active,
+    .landscaping-swiper .swiper-slide-next {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 2;
+    }
+</style>
+
+<!-- 2. Initialize Swiper Script -->
+<script type="module">
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.landscaping-swiper', {
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 2.2,
+            spaceBetween: 32,
+            speed: 500,
+            
+            breakpoints: {
+                768: {
+                    slidesPerView: 1.2,
+                    centeredSlides: true,
+                },
+                1024: {
+                    slidesPerView: 2.2,
+                    centeredSlides: true,
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1878,65 +1878,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Landscaping image reveal animate
-document.addEventListener("DOMContentLoaded", () => {
-  if (typeof gsap === "undefined") {
-    console.warn("GSAP not found. Include the GSAP script before this file.");
-    return;
-  }
+gsap.registerPlugin(ScrollTrigger);
 
-  if (typeof ScrollTrigger === "undefined") {
-    console.warn("ScrollTrigger not found. Include the ScrollTrigger plugin.");
-    return;
-  }
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  const images = document.querySelectorAll(".landscaping-image-reveal");
-
-  images.forEach((img) => {
-    const container = img.parentElement;
-
-    container.style.position = "relative";
-
-    // Initial state
-    gsap.set(img, {
+gsap.utils.toArray(".landscaping-image-reveal").forEach((img) => {
+  // Natural fade + scale reveal
+  gsap.fromTo(
+    img,
+    {
       opacity: 0,
-      y: 60,
-      transformOrigin: "center center",
-    });
-
-    // 1. Reveal — plays once
-    gsap.to(img, {
+      scale: 1.04,
+    },
+    {
       opacity: 1,
-      y: 0,
-      duration: 1.4,
+      scale: 1,
+      duration: 1.8,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: container,
-        start: "top 85%",
-        toggleActions: "play none none none",
+        trigger: img,
+        start: "top 88%",
+        once: true,
       },
-    });
+    }
+  );
 
-    // 2. Parallax — follows your example
-    gsap.fromTo(
-      img,
-      {
-        yPercent: -6,
+  // Subtle parallax
+  gsap.fromTo(
+    img,
+    {
+      yPercent: -3,
+    },
+    {
+      yPercent: 3,
+      ease: "none",
+      scrollTrigger: {
+        trigger: img,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1.5,
       },
-      {
-        yPercent: 6,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
-      }
-    );
-  });
+    }
+  );
 });
+
 
 // Landscaping CTA button animation
 document.addEventListener('DOMContentLoaded', () => {
@@ -2045,3 +2028,90 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// 
+const landscapingSwiper = new Swiper("#landscaping-reviews-slider", {
+  slidesPerView: 1,
+  spaceBetween: 16,
+
+  loop: true,
+  speed: 600,
+
+  breakpoints: {
+    640: {
+      slidesPerView: 1.5,
+      spaceBetween: 12,
+    },
+
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    },
+
+    1024: {
+      slidesPerView: 3.5,
+      spaceBetween: 24,
+    },
+
+    1280: {
+      slidesPerView: 3.5,
+      spaceBetween: 32,
+    },
+  },
+
+  on: {
+    init: function () {
+      updateActiveCards(this);
+    },
+
+    slideChangeTransitionStart: function () {
+      updateActiveCards(this);
+    },
+
+    resize: function () {
+      updateActiveCards(this);
+    },
+  },
+});
+
+
+function updateActiveCards(swiper) {
+  // Remove active class from all slides
+  swiper.slides.forEach(function (slide) {
+    slide.classList.remove("swiper-slide_active");
+  });
+
+  const slidesPerView = swiper.params.slidesPerView;
+
+  // Mobile: only 1 active slide
+  if (slidesPerView === 1.5) {
+    const activeSlide = swiper.slides[swiper.activeIndex];
+
+    if (activeSlide) {
+      activeSlide.classList.add("swiper-slide_active");
+    }
+
+    return;
+  }
+
+  // Tablet/Desktop:
+  // Active slides are the slides after the current starting slide
+  const firstActiveIndex = swiper.activeIndex + 1;
+  const secondActiveIndex = swiper.activeIndex + 2;
+
+  const firstActiveSlide = swiper.slides[firstActiveIndex];
+  const secondActiveSlide = swiper.slides[secondActiveIndex];
+
+  if (firstActiveSlide) {
+    firstActiveSlide.classList.add("swiper-slide_active");
+  }
+
+  if (secondActiveSlide) {
+    secondActiveSlide.classList.add("swiper-slide_active");
+  }
+}
+
+
+
+
+
