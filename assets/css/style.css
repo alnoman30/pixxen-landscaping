@@ -1,5 +1,5 @@
 /*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600;700;900&family=Barlow:wght@300;400;500;600;700;800;900&family=Cossette+Texte:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600;700;900&family=Barlow:wght@300;400;500;600;700;800;900&family=Cossette+Texte:wght@400;700&display=swap");
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -362,6 +362,9 @@
   }
   .mb-10 {
     margin-bottom: calc(var(--spacing) * 10);
+  }
+  .mb-60 {
+    margin-bottom: calc(var(--spacing) * 60);
   }
   .ml-1 {
     margin-left: calc(var(--spacing) * 1);
@@ -884,6 +887,9 @@
   .pt-15 {
     padding-top: calc(var(--spacing) * 15);
   }
+  .pt-60 {
+    padding-top: calc(var(--spacing) * 60);
+  }
   .pr-14 {
     padding-right: calc(var(--spacing) * 14);
   }
@@ -1336,6 +1342,11 @@
       height: calc(var(--spacing) * 5);
     }
   }
+  .sm\:h-13 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 13);
+    }
+  }
   .sm\:h-16 {
     @media (width >= 40rem) {
       height: calc(var(--spacing) * 16);
@@ -1344,6 +1355,11 @@
   .sm\:h-\[52px\] {
     @media (width >= 40rem) {
       height: 52px;
+    }
+  }
+  .sm\:w-13 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 13);
     }
   }
   .sm\:w-16 {
@@ -2611,7 +2627,7 @@
 }
 body {
   font-family: "Cossette Texte", sans-serif;
-  background-color: #F7F8F6;
+  background-color: #f7f8f6;
 }
 html {
   scroll-behavior: smooth;
@@ -2667,8 +2683,8 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  background-color: #C9E6C0;
-  border: 1px solid #A6D96A;
+  background-color: #c9e6c0;
+  border: 1px solid #a6d96a;
   border-radius: 24px;
   list-style: none;
   padding: 0;
@@ -2696,7 +2712,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 14px;
-  color: #0B2518;
+  color: #0b2518;
   text-decoration: none;
   padding: 11px 20px;
   font-size: 16px;
@@ -2709,8 +2725,8 @@ nav {
   transition: background 0.2s ease, color 0.2s ease;
 }
 .dropdown-service-list a:hover, .dropdown-service-list a.active {
-  background-color: #A6D96A;
-  color: #FFFFFF;
+  background-color: #a6d96a;
+  color: #ffffff;
 }
 .dropdown-preview {
   justify-content: end;
@@ -2747,7 +2763,7 @@ nav {
   top: 0;
   right: 0;
   height: 100vh;
-  background: #0B2518;
+  background: #0b2518;
   overflow-y: auto;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -2815,7 +2831,7 @@ nav {
   transition: color 0.2s ease, background 0.2s ease;
 }
 .mm-nav-link:hover {
-  color: #A6D96A;
+  color: #a6d96a;
   background: rgba(153, 254, 0, 0.04);
 }
 .mm-nav-link .mm-plus {
@@ -2825,7 +2841,7 @@ nav {
   line-height: 1;
 }
 .mm-nav-link:hover .mm-plus {
-  color: #A6D96A;
+  color: #a6d96a;
 }
 .mm-connect-btn {
   display: flex;
@@ -2834,7 +2850,7 @@ nav {
   margin: 32px 24px 0 24px;
   padding: 16px 24px;
   background: white;
-  color: #A6D96A;
+  color: #a6d96a;
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;
@@ -2844,7 +2860,7 @@ nav {
   transition: background 0.2s ease;
 }
 .mm-connect-btn:hover {
-  background: #A6D96A;
+  background: #a6d96a;
 }
 .mm-connect-btn .mm-arrow {
   width: 32px;
@@ -2888,7 +2904,7 @@ nav {
   transition: color 0.2s ease;
 }
 .mm-back-btn:hover {
-  color: #A6D96A;
+  color: #a6d96a;
 }
 .mm-services-title {
   font-size: 36px;
@@ -2905,7 +2921,7 @@ nav {
 .mm-service-card {
   background: transparent;
   border-radius: 12px;
-  border: 1px solid #C9E6C0;
+  border: 1px solid #c9e6c0;
   padding: 16px;
   text-decoration: none;
   display: flex;
@@ -2927,7 +2943,7 @@ nav {
   color: #fff;
 }
 .mm-service-card:hover .card-label {
-  color: #A6D96A;
+  color: #a6d96a;
 }
 .mm-deco {
   position: absolute;
@@ -2977,13 +2993,13 @@ nav {
 }
 #mobile-menu-toggle {
   padding: 8px 16px;
-  background-color: #18392B;
+  background-color: #18392b;
   cursor: pointer;
-  border-right: 1px solid #18392B;
+  border-right: 1px solid #18392b;
 }
 .menu-top {
   flex: 1;
-  background: #0B2518;
+  background: #0b2518;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2992,8 +3008,8 @@ nav {
 }
 .menu-bottom {
   height: 180px;
-  border-top: 1px solid #304D36;
-  background: linear-gradient(180deg, #0B2518 0%, #A6D96A 100%);
+  border-top: 1px solid #304d36;
+  background: linear-gradient(180deg, #0b2518 0%, #a6d96a 100%);
   display: flex;
   align-items: end;
   justify-content: center;
@@ -3065,7 +3081,7 @@ nav {
   margin-right: 10px;
 }
 .nav-col-title {
-  color: #A6D96A;
+  color: #a6d96a;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -3091,7 +3107,7 @@ nav {
   display: inline-block;
 }
 .nav-col ul li a:hover {
-  color: #A6D96A;
+  color: #a6d96a;
 }
 .bottom-logo {
   display: flex;
@@ -3198,16 +3214,16 @@ html.lenis, html.lenis body {
   font-weight: 700;
 }
 .landscaping-btn-cta .landscaping-btn-text-wipe {
-  background-image: linear-gradient(to right, #DFF2C8 50%, #0B2518 50%);
+  background-image: linear-gradient(to right, #dff2c8 50%, #0b2518 50%);
 }
 .landscaping-btn-cta-outline .landscaping-btn-text-wipe-outline {
-  background-image: linear-gradient(to right, #DFF2C8 50%, #A6D96A 50%);
+  background-image: linear-gradient(to right, #dff2c8 50%, #a6d96a 50%);
 }
 .landscaping-btn-cta-dark .landscaping-btn-text-wipe-dark {
-  background-image: linear-gradient(to right, #0B2518 50%, #A6D96A 50%);
+  background-image: linear-gradient(to right, #0b2518 50%, #a6d96a 50%);
 }
 .landscaping-btn-cta-outline2 .landscaping-btn-text-wipe-outline2 {
-  background-image: linear-gradient(to right, #DFF2C8 50%, #0B2518 50%);
+  background-image: linear-gradient(to right, #dff2c8 50%, #0b2518 50%);
 }
 .landscaping-btn-cta:hover .landscaping-btn-text-wipe, .landscaping-btn-cta-outline:hover .landscaping-btn-text-wipe-outline, .landscaping-btn-cta-dark:hover .landscaping-btn-text-wipe-dark, .landscaping-btn-cta-outline2:hover .landscaping-btn-text-wipe-outline2, .banner-btn-outline:hover .landscaping-btn-text-wipe {
   background-position: 0% 0;
@@ -3219,7 +3235,7 @@ html.lenis, html.lenis body {
   left: -18px;
   width: 46px;
   height: 46px;
-  background-image: url('../images/landscaping-heading-badge.png');
+  background-image: url("../images/landscaping-heading-badge.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -3247,24 +3263,24 @@ html.lenis, html.lenis body {
     height: 140px;
   }
 }
-#landscaping-reviews-slider {
-  width: 100%;
-  overflow: hidden;
-}
-#landscaping-reviews-slider .swiper-wrapper {
-  align-items: stretch;
-}
-#landscaping-reviews-slider .swiper-slide {
-  height: auto;
-  opacity: 0.3;
+.landscaping-client-feedback .landscaping-client-feedback-slider-wrap .splide__slide {
+  opacity: 0.8;
+  transform: scale(0.93);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
-#landscaping-reviews-slider .swiper-slide_active {
+.landscaping-client-feedback .landscaping-client-feedback-slider-wrap .splide__slide.is-active {
   opacity: 1;
+  transform: scale(1);
 }
-#landscaping-reviews-slider .landscaping-card {
-  width: 100%;
-  height: 100%;
+.landscaping-client-feedback .landscaping-client-feedback-slider-wrap .splide__slide.is-next {
+  opacity: 1;
+  transform: scale(1);
+}
+@media (max-width: 767px) {
+  .landscaping-client-feedback .landscaping-client-feedback-slider-wrap .splide__slide.is-next {
+    opacity: 0.8;
+    transform: scale(0.93);
+  }
 }
 @property --tw-translate-x {
   syntax: "*";
