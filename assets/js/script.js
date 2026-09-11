@@ -2074,38 +2074,54 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function updateActiveCards(swiper) {
-  // Remove active class from all slides
-  swiper.slides.forEach(function (slide) {
-    slide.classList.remove("swiper-slide_active");
+// Landscaping FAQ 
+document.querySelectorAll('.landscaping-faq-item').forEach((item) => {
+  const btn = item.querySelector('.landscaping-faq-question-btn');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.contains('is-open');
+
+    // Close all other items (accordion behavior)
+    document.querySelectorAll('.landscaping-faq-item.is-open').forEach((openItem) => {
+      if (openItem !== item) {
+        openItem.classList.remove('is-open');
+        openItem.querySelector('.landscaping-faq-question-btn').setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    item.classList.toggle('is-open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
   });
+});
 
-  const slidesPerView = swiper.params.slidesPerView;
+// landscaping section heading
+function initHeadingReveal() {
+  const headings = document.querySelectorAll('.landscaping-heading-reveal');
 
-  // Mobile: only 1 active slide
-  if (slidesPerView === 1.5) {
-    const activeSlide = swiper.slides[swiper.activeIndex];
+  headings.forEach((heading) => {
+    gsap.set(heading, {
+      opacity: 0,
+      y: 30,
+      filter: 'blur(4px)'
+    });
 
-    if (activeSlide) {
-      activeSlide.classList.add("swiper-slide_active");
-    }
-
-    return;
-  }
-
-  // Tablet/Desktop:
-  // Active slides are the slides after the current starting slide
-  const firstActiveIndex = swiper.activeIndex + 1;
-  const secondActiveIndex = swiper.activeIndex + 2;
-
-  const firstActiveSlide = swiper.slides[firstActiveIndex];
-  const secondActiveSlide = swiper.slides[secondActiveIndex];
-
-  if (firstActiveSlide) {
-    firstActiveSlide.classList.add("swiper-slide_active");
-  }
-
-  if (secondActiveSlide) {
-    secondActiveSlide.classList.add("swiper-slide_active");
-  }
+    gsap.to(heading, {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      duration: 1.2,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: heading,
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+        once: true
+      }
+    });
+  });
 }
+
+document.addEventListener('DOMContentLoaded', initHeadingReveal);
+
+// 
+
+
